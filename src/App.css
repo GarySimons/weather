@@ -1,38 +1,109 @@
-.App {
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #ffffff;
+}
+
+p {
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.main-container {
+  background-color: red;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100vh;
+}
+
+.weather-panel {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  max-width: 800px;
+  height: 470px;
+  margin: 25vh auto 0 auto;
+  background-color: orange;
+}
+
+.main-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  padding: 1.35rem;
+  gap: 2.5rem;
+  background-color: blueviolet;
+}
+
+.input-panel {
+  border: none;
+  padding: 0.3rem;
+  border-radius: 0.1rem;
+  width: 100%;
+}
+
+.details-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.location {
+  font-size: 2rem;
+  line-height: 1.1;
   text-align: center;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.date {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.weather-symbol {
+  height: 5rem;
+  margin: 0.5rem 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.temp {
+  font-size: 3.3rem;
+  text-align: center;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.temp span {
+  font-size: 1.3rem;
+}
+
+.description {
+  font-size: 1.5rem;
+  line-height: 1.1;
+  text-align: center;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.overview-panel {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  flex: 3;
+  background-color: green;
 }

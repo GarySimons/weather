@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import clearDay from "./images/clear-day.svg";
 
 import "./App.css";
 
@@ -20,15 +21,51 @@ function App() {
 
   return (
     <div className="App">
+      <div className="main-container">
+        <div className="weather-panel">
+          <div className="main-panel">
+            <input
+              className="input-panel"
+              value={location}
+              onChange={(event) => setLocation(event.target.value)}
+              onKeyDown={searchLocation}
+              type="text"
+            />
+            <div className="details-panel">
+              <p className="location">{data.address}</p>
+              <p className="date">
+                {data.days ? [data.days[0].datetime] : null}
+              </p>
+              <img
+                src={clearDay}
+                alt="weather symbol"
+                className="weather-symbol"
+              />
+              <p className="temp">
+                15<span>&#8451;</span>
+              </p>
+              <p className="description">
+                {data.currentConditions
+                  ? [data.currentConditions.conditions]
+                  : null}
+              </p>
+            </div>
+          </div>
+
+          <div className="overview-panel"></div>
+        </div>
+      </div>
+
       <input
         value={location}
         onChange={(event) => setLocation(event.target.value)}
-        onKeyPress={searchLocation}
+        onKeyDown={searchLocation}
         placeholder="enter location"
         type="text"
       />
 
       <h2>Main data</h2>
+
       <p>Location: {data.address}</p>
       <p>date:{data.days ? [data.days[0].datetime] : null}</p>
       <p>
@@ -58,11 +95,41 @@ function App() {
 
       <h3>5 Day Forcast</h3>
 
-      <p>Day 1: </p>
-      <p>Day 2: </p>
-      <p>Day 3: </p>
-      <p>Day 4: </p>
-      <p>Day 5: </p>
+      <h4>Day 1</h4>
+      <div>
+        <p>Day: Tomorrow</p>
+        <p>Description: {data.days ? [data.days[1].conditions] : null}</p>
+        <p>Max: {data.days ? [data.days[1].tempmax] : null}</p>
+        <p>Min: {data.days ? [data.days[1].tempmin] : null}</p>
+      </div>
+      <h4>Day 2</h4>
+      <div>
+        <p>Day: {data.days ? [data.days[2].datetime] : null}</p>
+        <p>Description: {data.days ? [data.days[1].conditions] : null}</p>
+        <p>Max: {data.days ? [data.days[2].tempmax] : null}</p>
+        <p>Min: {data.days ? [data.days[2].tempmin] : null}</p>
+      </div>
+      <h4>Day 3</h4>
+      <div>
+        <p>Day: {data.days ? [data.days[3].datetime] : null}</p>
+        <p>Description: {data.days ? [data.days[1].conditions] : null}</p>
+        <p>Max: {data.days ? [data.days[3].tempmax] : null}</p>
+        <p>Min: {data.days ? [data.days[3].tempmin] : null}</p>
+      </div>
+      <h4>Day 4</h4>
+      <div>
+        <p>Day: {data.days ? [data.days[4].datetime] : null}</p>
+        <p>Description: {data.days ? [data.days[1].conditions] : null}</p>
+        <p>Max: {data.days ? [data.days[4].tempmax] : null}</p>
+        <p>Min: {data.days ? [data.days[4].tempmin] : null}</p>
+      </div>
+      <h4>Day 5</h4>
+      <div>
+        <p>Day: {data.days ? [data.days[5].datetime] : null}</p>
+        <p>Description: {data.days ? [data.days[1].conditions] : null}</p>
+        <p>Max: {data.days ? [data.days[5].tempmax] : null}</p>
+        <p>Min: {data.days ? [data.days[5].tempmin] : null}</p>
+      </div>
     </div>
   );
 }
