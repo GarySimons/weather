@@ -30,20 +30,35 @@ function App() {
 
       <h2>Main data</h2>
       <p>Location: {data.address}</p>
-      <p>Today's date: {data.days[0].datetime} </p>
-      <p>Description: {data.currentConditions.conditions}</p>
+      <p>date:{data.days ? [data.days[0].datetime] : null}</p>
+      <p>
+        Description:
+        {data.currentConditions ? [data.currentConditions.conditions] : null}
+      </p>
 
       <h3>Day overview</h3>
-      <p>Humidity: {data.currentConditions.humidity}</p>
-      <p>Cloud cover: {data.currentConditions.cloudcover}</p>
-      <p>Max temp: {data.days[0].tempmax}</p>
-      <p>Min temp: {data.days[0].tempmin}</p>
-      <p>Sunrise: {data.currentConditions.sunrise}</p>
-      <p>Sunset: {data.currentConditions.sunset}</p>
+      <p>
+        Humidity:
+        {data.currentConditions ? [data.currentConditions.humidity] : null}
+      </p>
+      <p>
+        Cloud cover:
+        {data.currentConditions ? [data.currentConditions.cloudcover] : null}
+      </p>
+      <p>Max temp: {data.days ? [data.days[0].tempmax] : null}</p>
+      <p>Min temp: {data.days ? [data.days[0].tempmin] : null}</p>
+      <p>
+        Sunrise:
+        {data.currentConditions ? [data.currentConditions.sunrise] : null}
+      </p>
+      <p>
+        Sunset:
+        {data.currentConditions ? [data.currentConditions.sunset] : null}
+      </p>
 
       <h3>5 Day Forcast</h3>
 
-      <p>Day 1: [src]='{data.days[0].icon}'</p>
+      <p>Day 1: </p>
       <p>Day 2: </p>
       <p>Day 3: </p>
       <p>Day 4: </p>
