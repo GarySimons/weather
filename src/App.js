@@ -42,7 +42,8 @@ function App() {
                 className="weather-symbol"
               />
               <p className="temp">
-                15<span>&#8451;</span>
+                {data.currentConditions ? [data.currentConditions.temp] : null}
+                <span>&#8451;</span>
               </p>
               <p className="description">
                 {data.currentConditions
@@ -52,7 +53,185 @@ function App() {
             </div>
           </div>
 
-          <div className="overview-panel"></div>
+          <div className="overview-panel">
+            <div className="overview-block">
+              <div className="overview-head-container">
+                <p className="overview-head">Day Overview</p>
+              </div>
+              <div className="overview-top-container">
+                <div className="overview-top-block">
+                  <p className="overview-subhead">Humidity</p>
+                  <p className="overview-value">
+                    {data.currentConditions
+                      ? [data.currentConditions.humidity]
+                      : null}
+                    %
+                  </p>
+                </div>
+                <div className="overview-top-block">
+                  <p className="overview-subhead">Cloud Cover</p>
+                  <p className="overview-value">
+                    {data.currentConditions
+                      ? [data.currentConditions.cloudcover]
+                      : null}
+                    %
+                  </p>
+                </div>
+              </div>
+              <div className="overview-middle-container">
+                <div className="overview-middle-block">
+                  <p className="overview-subhead">Max temp.</p>
+                  <p className="overview-value">
+                    {data.days ? [data.days[0].tempmax] : null}
+                    <span>&#8451;</span>
+                  </p>
+                </div>
+                <div className="overview-middle-block">
+                  <p className="overview-subhead">Min temp.</p>
+                  <p className="overview-value">
+                    {data.days ? [data.days[0].tempmin] : null}
+                    <span>&#8451;</span>
+                  </p>
+                </div>
+                <div className="overview-middle-block">
+                  <p className="overview-subhead">Sunrise</p>
+                  <p className="overview-value">
+                    {data.currentConditions
+                      ? [data.currentConditions.sunrise]
+                      : null}
+                  </p>
+                </div>
+                <div className="overview-middle-block">
+                  <p className="overview-subhead">Sunset</p>
+                  <p className="overview-value">
+                    {data.currentConditions
+                      ? [data.currentConditions.sunset]
+                      : null}
+                  </p>
+                </div>
+              </div>
+              <div className="overview-bottom-container">
+                <div className="overview-head-container">
+                  <p className="overview-head">5 Day Forcast</p>
+                </div>
+                <div className="overview-bottom-forcast">
+                  <div className="overview-bottom-block">
+                    <p className="overview-bottom-subhead">Tomorrow</p>
+                    <img
+                      src={clearDay}
+                      alt="weather symbol"
+                      className="weather-symbol-small"
+                    />
+                    <p className="overview-bottom-decription">
+                      {data.days ? [data.days[1].conditions] : null}
+                    </p>
+                    <div className="overview-temp-container">
+                      <p className="overview-small-subhead">
+                        {data.days ? [data.days[1].tempmax] : null}
+                        <span>&#8451;</span>
+                      </p>
+                      <p className="overview-small-subhead-fade">
+                        {data.days ? [data.days[1].tempmin] : null}
+                        <span>&#8451;</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="overview-bottom-block">
+                    <p className="overview-bottom-subhead">
+                      {data.days ? [data.days[1].datetime] : null}
+                    </p>
+                    <img
+                      src={clearDay}
+                      alt="weather symbol"
+                      className="weather-symbol-small"
+                    />
+                    <p className="overview-bottom-decription">
+                      {data.days ? [data.days[1].conditions] : null}
+                    </p>
+                    <div className="overview-temp-container">
+                      <p className="overview-small-subhead">
+                        {data.days ? [data.days[1].tempmax] : null}
+                        <span>&#8451;</span>
+                      </p>
+                      <p className="overview-small-subhead-fade">
+                        {data.days ? [data.days[1].tempmin] : null}
+                        <span>&#8451;</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="overview-bottom-block">
+                    <p className="overview-bottom-subhead">
+                      {data.days ? [data.days[2].datetime] : null}
+                    </p>
+                    <img
+                      src={clearDay}
+                      alt="weather symbol"
+                      className="weather-symbol-small"
+                    />
+                    <p className="overview-bottom-decription">
+                      {data.days ? [data.days[2].conditions] : null}
+                    </p>
+                    <div className="overview-temp-container">
+                      <p className="overview-small-subhead">
+                        {data.days ? [data.days[2].tempmax] : null}
+                        <span>&#8451;</span>
+                      </p>
+                      <p className="overview-small-subhead-fade">
+                        {data.days ? [data.days[2].tempmin] : null}
+                        <span>&#8451;</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="overview-bottom-block">
+                    <p className="overview-bottom-subhead">
+                      {data.days ? [data.days[3].datetime] : null}
+                    </p>
+                    <img
+                      src={clearDay}
+                      alt="weather symbol"
+                      className="weather-symbol-small"
+                    />
+                    <p className="overview-bottom-decription">
+                      {data.days ? [data.days[3].conditions] : null}
+                    </p>
+                    <div className="overview-temp-container">
+                      <p className="overview-small-subhead">
+                        {data.days ? [data.days[3].tempmax] : null}
+                        <span>&#8451;</span>
+                      </p>
+                      <p className="overview-small-subhead-fade">
+                        {data.days ? [data.days[3].tempmin] : null}
+                        <span>&#8451;</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="overview-bottom-block">
+                    <p className="overview-bottom-subhead">
+                      {data.days ? [data.days[4].datetime] : null}
+                    </p>
+                    <img
+                      src={clearDay}
+                      alt="weather symbol"
+                      className="weather-symbol-small"
+                    />
+                    <p className="overview-bottom-decription">
+                      {data.days ? [data.days[4].conditions] : null}
+                    </p>
+                    <div className="overview-temp-container">
+                      <p className="overview-small-subhead">
+                        {data.days ? [data.days[4].tempmax] : null}
+                        <span>&#8451;</span>
+                      </p>
+                      <p className="overview-small-subhead-fade">
+                        {data.days ? [data.days[4].tempmin] : null}
+                        <span>&#8451;</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
