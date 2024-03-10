@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import clearDay from "./images/clear-day.svg";
 
 import "./App.css";
 
 function App() {
-  const imagePath = `images/cloudy.svg`;
-
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
@@ -18,6 +15,7 @@ function App() {
         setData(response.data);
         console.log(response.data);
       });
+      setLocation("");
     }
   };
 
@@ -47,8 +45,6 @@ function App() {
                       : null
                   }.svg`
                 }
-                // src={window.location.origin + "/images/cloudy.svg"}
-                // src="images/cloudy.svg"
                 alt="weather symbol"
                 className="weather-symbol"
               />
