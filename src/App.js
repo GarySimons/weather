@@ -19,8 +19,6 @@ function App() {
     }
   };
 
-  // const progress = useState(0);
-
   return (
     <div className="App">
       <div className="main-container">
