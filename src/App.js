@@ -5,6 +5,8 @@ import clearDay from "./images/clear-day.svg";
 import "./App.css";
 
 function App() {
+  const imagePath = `images/cloudy.svg`;
+
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
@@ -37,7 +39,16 @@ function App() {
                 {data.days ? [data.days[0].datetime] : null}
               </p>
               <img
-                src={clearDay}
+                src={
+                  window.location.origin +
+                  `/images/${
+                    data.currentConditions
+                      ? [data.currentConditions.icon]
+                      : null
+                  }.svg`
+                }
+                // src={window.location.origin + "/images/cloudy.svg"}
+                // src="images/cloudy.svg"
                 alt="weather symbol"
                 className="weather-symbol"
               />
@@ -118,30 +129,10 @@ function App() {
                   <div className="overview-bottom-block">
                     <p className="overview-bottom-subhead">Tomorrow</p>
                     <img
-                      src={clearDay}
-                      alt="weather symbol"
-                      className="weather-symbol-small"
-                    />
-                    <p className="overview-bottom-decription">
-                      {data.days ? [data.days[1].conditions] : null}
-                    </p>
-                    <div className="overview-temp-container">
-                      <p className="overview-small-subhead">
-                        {data.days ? [data.days[1].tempmax] : null}
-                        <span>&#8451;</span>
-                      </p>
-                      <p className="overview-small-subhead-fade">
-                        {data.days ? [data.days[1].tempmin] : null}
-                        <span>&#8451;</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div className="overview-bottom-block">
-                    <p className="overview-bottom-subhead">
-                      {data.days ? [data.days[1].datetime] : null}
-                    </p>
-                    <img
-                      src={clearDay}
+                      src={
+                        window.location.origin +
+                        `/images/${data.days ? [data.days[1].icon] : null}.svg`
+                      }
                       alt="weather symbol"
                       className="weather-symbol-small"
                     />
@@ -164,7 +155,10 @@ function App() {
                       {data.days ? [data.days[2].datetime] : null}
                     </p>
                     <img
-                      src={clearDay}
+                      src={
+                        window.location.origin +
+                        `/images/${data.days ? [data.days[2].icon] : null}.svg`
+                      }
                       alt="weather symbol"
                       className="weather-symbol-small"
                     />
@@ -187,7 +181,10 @@ function App() {
                       {data.days ? [data.days[3].datetime] : null}
                     </p>
                     <img
-                      src={clearDay}
+                      src={
+                        window.location.origin +
+                        `/images/${data.days ? [data.days[3].icon] : null}.svg`
+                      }
                       alt="weather symbol"
                       className="weather-symbol-small"
                     />
@@ -210,7 +207,10 @@ function App() {
                       {data.days ? [data.days[4].datetime] : null}
                     </p>
                     <img
-                      src={clearDay}
+                      src={
+                        window.location.origin +
+                        `/images/${data.days ? [data.days[4].icon] : null}.svg`
+                      }
                       alt="weather symbol"
                       className="weather-symbol-small"
                     />
@@ -224,6 +224,32 @@ function App() {
                       </p>
                       <p className="overview-small-subhead-fade">
                         {data.days ? [data.days[4].tempmin] : null}
+                        <span>&#8451;</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="overview-bottom-block">
+                    <p className="overview-bottom-subhead">
+                      {data.days ? [data.days[5].datetime] : null}
+                    </p>
+                    <img
+                      src={
+                        window.location.origin +
+                        `/images/${data.days ? [data.days[5].icon] : null}.svg`
+                      }
+                      alt="weather symbol"
+                      className="weather-symbol-small"
+                    />
+                    <p className="overview-bottom-decription">
+                      {data.days ? [data.days[5].conditions] : null}
+                    </p>
+                    <div className="overview-temp-container">
+                      <p className="overview-small-subhead">
+                        {data.days ? [data.days[5].tempmax] : null}
+                        <span>&#8451;</span>
+                      </p>
+                      <p className="overview-small-subhead-fade">
+                        {data.days ? [data.days[5].tempmin] : null}
                         <span>&#8451;</span>
                       </p>
                     </div>
