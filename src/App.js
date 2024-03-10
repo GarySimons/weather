@@ -19,6 +19,8 @@ function App() {
     }
   };
 
+  // const progress = useState(0);
+
   return (
     <div className="App">
       <div className="main-container">
@@ -67,22 +69,66 @@ function App() {
               </div>
               <div className="overview-top-container">
                 <div className="overview-top-block">
-                  <p className="overview-subhead">Humidity</p>
-                  <p className="overview-value">
+                  <p className="overview-subhead-top">Humidity</p>
+                  <p className="overview-value-top">
                     {data.currentConditions
                       ? [data.currentConditions.humidity]
                       : null}
                     %
                   </p>
+                  <div className="progress-container">
+                    <div className="progress-bar-labels">
+                      <p className="progress-label"></p>
+                      <p className="progress-label">%</p>
+                    </div>
+                    <div className="progress-bar">
+                      <div
+                        className="progress-bar-fill-humidity"
+                        style={{
+                          width: `${[
+                            data.currentConditions
+                              ? [data.currentConditions.humidity]
+                              : null,
+                          ]}%`,
+                        }}
+                      ></div>
+                      <div className="progress-bar-labels">
+                        <p className="progress-label">0</p>
+                        <p className="progress-label">100</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div className="overview-top-block">
-                  <p className="overview-subhead">Cloud Cover</p>
-                  <p className="overview-value">
+                  <p className="overview-subhead-top">Cloud Cover</p>
+                  <p className="overview-value-top">
                     {data.currentConditions
                       ? [data.currentConditions.cloudcover]
                       : null}
                     %
                   </p>
+                  <div className="progress-container">
+                    <div className="progress-bar-labels">
+                      <p className="progress-label"></p>
+                      <p className="progress-label">%</p>
+                    </div>
+                    <div className="progress-bar">
+                      <div
+                        className="progress-bar-fill-cloud"
+                        style={{
+                          width: `${[
+                            data.currentConditions
+                              ? [data.currentConditions.cloudcover]
+                              : null,
+                          ]}%`,
+                        }}
+                      ></div>
+                      <div className="progress-bar-labels">
+                        <p className="progress-label">0</p>
+                        <p className="progress-label">100</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="overview-middle-container">
